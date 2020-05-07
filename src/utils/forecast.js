@@ -13,7 +13,10 @@ const forecast = (lat, long, callback) => {
         } else {
             callback(
                 undefined, 
-                body.current.weather_descriptions + ". It is currently " + body.current.temperature + " degrees out. There is " + body.current.precip + "% chance of precipitation."
+                body.current.weather_descriptions + ". It is currently " + body.current.temperature + 
+                " degrees out. There is " + body.current.precip + 
+                "% chance of precipitation. The current local time is " + 
+                body.location.localtime.split(" ").splice(-1) + "."
             )
         }
     })
